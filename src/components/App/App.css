@@ -1,0 +1,32 @@
+.page {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  color: #fff;
+  background-color: #303030;
+}
+
+.page__container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: minmax(300px, 1280px);
+  grid-template-rows: auto 1fr auto;
+  justify-content: center;
+  background-color: #202020;
+  
+}
+
+.page__container_no-footer {
+  grid-template-rows: auto 1fr;
+}
+
+.page__container_only-content {
+  grid-template-rows: 1fr;
+}
