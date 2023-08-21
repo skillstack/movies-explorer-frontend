@@ -1,0 +1,124 @@
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  padding: 0 70px;
+  width: 100%;
+  min-height: 480px;
+  box-sizing: border-box;
+  background-color: #202020;
+}
+
+.portfolio__title {
+  margin: 0;
+  padding: 55px 0 0 0;
+  width: 100%;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  color: #8B8B8B;
+}
+
+.portfolio__list {
+  width: 100%;
+  margin: 0;
+  padding: 30px 0 0 0;
+  list-style: none;
+}
+
+.portfolio__list-item {
+  width: 100%;
+  padding: 20px 0 9px 0;
+  border-bottom: 1px solid #424242;
+}
+
+.portfolio__list-item:last-child {
+  border-bottom: none;
+}
+
+.portfolio__link {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: -1.2px;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio__link:hover {
+  opacity: 0.7;
+}
+
+.portfolio__arrow {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 60px;
+  letter-spacing: -1.2px;
+}
+
+@media screen and (max-width: 865px) {
+  .portfolio {
+    padding: 0 50px;
+    min-height: 445px;
+  }
+  
+  .portfolio__title {
+    color: #A0A0A0;
+  }
+  
+  .portfolio__list-item {
+    border-color: #E6E6E6;
+  }
+  
+  .portfolio__link {
+    font-size: 28px;
+    line-height: 50px;
+    letter-spacing: -1.12px;
+  }
+  
+  .portfolio__arrow {
+    font-size: 28px;
+    line-height: 60px;
+    letter-spacing: -1.12px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .portfolio {
+    padding: 0 14px;
+    min-height: 327px;
+  }
+
+  .portfolio__title {
+    padding-top: 33px;
+    font-size: 14px;
+  }
+
+  .portfolio__list {
+    padding-top: 20px;
+  }
+
+  .portfolio__list-item {
+    padding: 20px 0 19px 0;
+  }
+
+  .portfolio__link {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.72px;
+  }
+
+  .portfolio__arrow {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.72px;
+  }
+}
