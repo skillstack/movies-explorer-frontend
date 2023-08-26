@@ -36,8 +36,9 @@
   color: #4285F4;
   text-decoration: none;
   cursor: pointer;
-  opacity: 1;
   transition: opacity 0.3s ease;
+  border: none;
+  background: transparent;
 }
 
 .not-found__link:hover {
@@ -68,5 +69,5 @@
   .not-found__link{
     font-size: 12px;
     line-height: 15px;
-  }  
+  }
 }

@@ -1,45 +1,38 @@
-import React from 'react';
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import Header from '../Header/Header';
+import Header from "../Header/Header";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import "./Profile.css";
 
-function Profile() {
-
+function Profile(props) {
+  const currentUser = useContext(CurrentUserContext);
   return (
     <div className="page__container page__container_no-footer">
-      <Header headerColor={'dark-grey'} />
+      <Header headerColor={"dark-grey"} loggedIn={props.loggedIn} />
       <main className="main">
         <section className="profile">
-          <h2 className="profile__title">{`Привет, Виталий!`}</h2>
+          <h2 className="profile__title">{`Привет, ${currentUser.name}!`}</h2>
           <form className="profile__form">
             <label className="profile__field">
               Имя
-              <input
-                className="profile__input"
-                id="name-input"
-                name="name"
-                type="text"
-                placeholder="Виталий"
-                required
-              />
+              <p className="profile__input">{currentUser.name}</p>
             </label>
             <div className="profile__line"></div>
             <label className="profile__field">
               E-mail
-              <input
-                className="profile__input"
-                id="email-input"
-                name="email"
-                type="text"
-                placeholder="pochta@yandex.ru"
-                required
-              />
+              <p className="profile__input">{currentUser.email}</p>
             </label>
-            <button className="profile__edit-button" type="submit">
+            <span className="profile__message">{props.message}</span>
+            <Link className="profile__edit-button" type="button" to="/edit">
               Редактировать
-            </button>
-            <Link className="profile__logout" to="/" >
-              Выйти из аккаунта
             </Link>
+            <button
+              className="profile__logout"
+              type="button"
+              onClick={props.handleLogout}
+            >
+              Выйти из аккаунта
+            </button>
           </form>
         </section>
       </main>

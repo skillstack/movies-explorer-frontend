@@ -1,7 +1,7 @@
-import React from 'react';
-import AuthForm from '../AuthForm/AuthForm';
+import React from "react";
+import AuthForm from "../AuthForm/AuthForm";
 
-function Login() {
+function Login(props) {
   return (
     <div className="page__container page__container_only-content">
       <AuthForm
@@ -10,6 +10,8 @@ function Login() {
         question="Еще не зарегистрированы? "
         linkText="Регистрация"
         link="/signup"
+        handleUserSubmit={props.handleLogin}
+        message={props.message}
       >
         <label className="auth-form__field">
           E-mail

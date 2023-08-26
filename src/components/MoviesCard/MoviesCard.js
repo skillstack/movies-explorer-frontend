@@ -1,36 +1,57 @@
-import React from 'react';
-import film from '../../images/film.jpg'
+import React from "react";
 
-function MoviesCard({ isSaved }) {
-  const [isDeleteButtonVisible, setIsDeleteButtonVisible] = React.useState(false);
-  const [isLiked, setIsLiked] = React.useState(false);
-
-  function handleCardOnMouseEnter() {
-    setIsDeleteButtonVisible(true);
+function MoviesCard(props) {
+  function time(duration) {
+    const number = parseInt(duration);
+    const hours = Math.floor(number / 60);
+    const minutes = number % 60;
+    return `${hours}ч ${minutes}м`;
   }
 
-  function handleCardOnMouseLeave() {
-    setIsDeleteButtonVisible(false);
+  function like() {
+    props.onLike(props.movie);
   }
 
-  function handleLikeButtonOnCLick() {
-    setIsLiked(!isLiked);
+  function remove() {
+    props.onRemove(props.id);
   }
+
   return (
     <li className="movies-card__item">
-      <img className="movies-card__img" src={film} alt="33 слова о дизайне" />
-      <div className="movies-card__description" onMouseEnter={handleCardOnMouseEnter} onMouseLeave={handleCardOnMouseLeave}>
-        <h2 className="movies-card__title">33 слова о дизайне</h2>
-        {isSaved
-          ?
-          <button className={isDeleteButtonVisible ? "movies-card__delete-button movies-card__delete-button_visible" : "movies-card__delete-button"}></button>
-          :
-          <button className={isLiked ? "movies-card__like-button movies-card__like-button_clicked" : "movies-card__like-button"} onClick={handleLikeButtonOnCLick}></button>
-        }
+      <div className="movies__preview">
+        <a
+          className="movie-card__trailer"
+          href={props.movie.trailerLink}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            className="movies-card__img"
+            src={
+              props.class !== "remove"
+                ? `https://api.nomoreparties.co/${props.movie.image.url}`
+                : props.movie.image
+            }
+            alt={props.movie.nameRU}
+          />
+        </a>
       </div>
-      <p className="movies-card__duration">1ч 42м</p>
+      <div className="movies-card__description">
+        <h2 className="movies-card__title">{props.movie.nameRU}</h2>
+        <button
+          className={
+            props.class === "like"
+              ? "movies-card__like-button movies-card__like-button_clicked"
+              : props.class === "default"
+              ? "movies-card__like-button"
+              : "movies-card__delete-button"
+          }
+          onClick={props.class === "default" ? like : remove}
+        ></button>
+      </div>
+      <p className="movies-card__duration">{time(props.movie.duration)}</p>
     </li>
-  )
+  );
 }
 
 export default MoviesCard;

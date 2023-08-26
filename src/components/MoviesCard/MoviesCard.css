@@ -29,11 +29,9 @@
   border-radius: 50%;
   border: none;
   outline: none;
-  background: url('../../images/delete.svg') center no-repeat;
-  background-color: #313131;
-  visibility: hidden;
-  opacity: 0;
+  background: #313131 url('../../images/delete.svg') no-repeat center;
   transition: opacity 0.3s;
+  cursor: pointer;
 }
 
 .movies-card__delete-button_visible {
@@ -48,8 +46,7 @@
   border-radius: 50%;
   border: none;
   outline: none;
-  background: url('../../images/like-off.svg') center no-repeat;
-  background-color: #313131;
+  background: #313131 url('../../images/like-off.svg') no-repeat center;
   cursor: pointer;
   transition: background 0.3s ease;
 }
@@ -59,8 +56,7 @@
 }
 
 .movies-card__like-button_clicked {
-  background: url('../../images/like-on.svg') center no-repeat;
-  background-color: #313131;
+  background: #313131 url('../../images/like-on.svg') no-repeat center;
 }
 
 .movies-card__duration {

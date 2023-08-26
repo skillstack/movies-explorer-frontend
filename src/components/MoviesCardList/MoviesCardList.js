@@ -1,39 +1,26 @@
-import React from 'react';
-import MoviesCard from '../MoviesCard/MoviesCard';
-import Preloader from '../Preloader/Preloader';
+import React from "react";
 
-function MoviesCardList({ isSaved }) {
-  const isLoading = false;
-
+function MoviesCardList(props) {
   return (
     <section className="movies-card-list">
-      {isLoading ? (
-        <Preloader />
+      {props.moviesCards.length > 0 ? (
+        <ul className="movies-card-list__list">{props.moviesCards}</ul>
       ) : (
-        <>
-          <ul className="movies-card-list__list">
-            <MoviesCard isSaved={isSaved} />
-            <MoviesCard isSaved={isSaved} />
-            <MoviesCard isSaved={isSaved} />
-            <MoviesCard isSaved={isSaved} />
-            <MoviesCard isSaved={isSaved} />
-            <MoviesCard isSaved={isSaved} />
-            <MoviesCard isSaved={isSaved} />
-            <MoviesCard isSaved={isSaved} />
-            <MoviesCard isSaved={isSaved} />
-            <MoviesCard isSaved={isSaved} />
-            <MoviesCard isSaved={isSaved} />
-            <MoviesCard isSaved={isSaved} />
-            <MoviesCard isSaved={isSaved} />
-            <MoviesCard isSaved={isSaved} />
-            <MoviesCard isSaved={isSaved} />
-            <MoviesCard isSaved={isSaved} />
-          </ul>
-          <div className="movies-card-list__button-container">
-            <button className={isSaved ? "movies-card-list__button movies-card-list__button_hidden" : "movies-card-list__button"}>Ещё</button>
-          </div>
-        </>
+        <p className={"movies__list-notfound"}>Ничего не найдено</p>
       )}
+      <div className="movies-card-list__button-container">
+        <button
+          className={
+            !props.isSaved || props.moviesCards.length >= props.maxMovies
+              ? "movies-card-list__button"
+              : "movies-card-list__button movies-card-list__button_hidden"
+          }
+          type={"button"}
+          onClick={() => props.addMovies()}
+        >
+          Ещё
+        </button>
+      </div>
     </section>
   );
 }
