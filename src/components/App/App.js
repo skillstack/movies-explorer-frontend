@@ -25,7 +25,7 @@ import ProtectedRouteElement from "../ProtectedRoute/ProtectedRoute";
 import Preloader from "../Preloader/Preloader";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [usePreloader, setUsePreloader] = useState(true);
   const navigate = useNavigate();
   const [useMessage, setUseMessage] = useState("");
