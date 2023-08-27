@@ -11,7 +11,7 @@ function MoviesCardList(props) {
       <div className="movies-card-list__button-container">
         <button
           className={
-            props.clickCount || (props.moviesCards.length > props.maxMovies && !props.isSaved)
+            props.moviesCards.length < props.movies && !props.isSaved
               ? "movies-card-list__button"
               : "movies-card-list__button movies-card-list__button_hidden"
           }

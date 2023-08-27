@@ -25,7 +25,9 @@ export function filterMovies(movies, query, isShortFilm, count) {
     );
   }
 
+  const countMovies = filteredMovies.length;
+
   filteredMovies = filteredMovies.slice(0, count ? count : defaultCount.count);
 
-  return filteredMovies;
+  return { filteredMovies, countMovies };
 }

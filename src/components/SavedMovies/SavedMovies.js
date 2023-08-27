@@ -12,7 +12,7 @@ function SavedMovies(props) {
 
   const movies = filterMovies(props.savedMovies, query, shortFilmsOnly, 0);
 
-  const userMoviesCards = movies.map((el) => {
+  const userMoviesCards = movies.filteredMovies.map((el) => {
     return (
       <MoviesCard
         key={el.movieId}
