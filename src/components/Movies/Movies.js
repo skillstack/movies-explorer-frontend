@@ -17,6 +17,7 @@ function Movies(props) {
     return savedShortFilmsOnly ? JSON.parse(savedShortFilmsOnly) : false;
   });
   const [movieCount, setMovieCount] = useState(0);
+  const [clickCount, setClickCount] = useState(true);
 
   useEffect(() => {
     setMovieCount(moviesToShow.moviesOnPage);
@@ -59,6 +60,7 @@ function Movies(props) {
 
   function loadMoreMovies() {
     setMovieCount(movieCount + moviesToShow.addMoviesOnPage);
+    setClickCount(false);
   }
 
   function handleToggleShortFilms(checked) {
@@ -79,6 +81,7 @@ function Movies(props) {
           addMovies={loadMoreMovies}
           maxMovies={movieCount}
           isSaved={false}
+          clickCount={clickCount}
         />
       </main>
       <Footer />
