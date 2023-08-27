@@ -1,4 +1,4 @@
-export const BASE_URL = "https://backend.nomoredomains.work";
+export const BASE_URL = "https://api.vitaliydiploma.nomoredomainsicu.ru";
 
 function getResponse(res) {
   if (!res.ok) {
