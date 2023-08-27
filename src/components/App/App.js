@@ -109,6 +109,9 @@ function App() {
         if (res !== false) {
           setLoggedIn(false);
           navigate("/", { replace: true });
+          sessionStorage.clear();
+          setUseMessage("");
+          setCurrentUser({});
         }
       })
       .catch((error) => {
