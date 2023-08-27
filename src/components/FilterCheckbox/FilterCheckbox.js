@@ -7,6 +7,7 @@ function FilterCheckbox(props) {
     const newChecked = !isChecked;
     setIsChecked(newChecked);
     props.onToggle(newChecked);
+    props.onSubmit({ film: props.filmValue });
   };
 
   return (

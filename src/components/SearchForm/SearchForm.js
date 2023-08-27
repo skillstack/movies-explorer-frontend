@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 import { Validation } from "../Validation/validation";
 import { useLocation } from "react-router-dom";
 
 function SearchForm(props) {
   const { register, handleSubmit, setValue } = Validation();
+  const [filmValue, setFilmValue] = useState("");
 
   const location = useLocation();
 
@@ -13,6 +14,7 @@ function SearchForm(props) {
       const savedQuery = sessionStorage.getItem("queryMovies");
       if (savedQuery) {
         setValue("film", savedQuery);
+        setFilmValue(savedQuery);
       }
     }
   }, [location.pathname]);
@@ -31,10 +33,17 @@ function SearchForm(props) {
             type="text"
             placeholder="Фильм"
             {...register("film")}
+            value={filmValue}
+            onChange={(e) => setFilmValue(e.target.value)}
           />
           <button className="search-form__submit-button" type="submit" />
         </label>
-        <FilterCheckbox onToggle={props.onToggle} checked={props.checked} />
+        <FilterCheckbox
+          onToggle={props.onToggle}
+          checked={props.checked}
+          onSubmit={onSubmit}
+          filmValue={filmValue}
+        />
       </form>
     </section>
   );
