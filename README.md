@@ -14,10 +14,10 @@
 
 ## Ссылки
 
+[Ссылка на pull request](https://github.com/skillstack/movies-explorer-frontend/pull/2)  
 [Ссылка на файл макета](https://disk.yandex.ru/d/-ODa2JGbdCg4XA)  
-
-[Ссылка на фронтэнд](https://iavianm.nomoredomains.rocks/)  
-[Ссылка на бэкенд](https://backend.nomoredomains.work)  
+[Ссылка на фронтэнд](https://vitaliydiploma.nomoredomainsicu.ru)  
+[Ссылка на бэкенд](https://api.vitaliydiploma.nomoredomainsicu.ru)  
 [Ссылка на макет в фигма](https://www.figma.com/file/i7z5WMTqiBMNhk5zTlwhTQ/Diplom?type=design&node-id=891%3A3857&mode=dev)  
 [Ссылка на репозиторий фронтэнд](https://github.com/skillstack/movies-explorer-frontend)  
 [Ссылка на репозиторий бэкенд](https://github.com/skillstack/movies-explorer-api)

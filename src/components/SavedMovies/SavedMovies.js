@@ -12,8 +12,6 @@ function SavedMovies(props) {
 
   const movies = filterMovies(props.savedMovies, query, shortFilmsOnly, 0);
 
-  console.log(query);
-
   const userMoviesCards = movies.map((el) => {
     return (
       <MoviesCard
