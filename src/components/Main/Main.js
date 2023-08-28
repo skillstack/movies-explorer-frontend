@@ -1,15 +1,15 @@
-import Header from '../Header/Header';
-import Promo from '../Promo/Promo';
-import AboutProject from '../AboutProject/AboutProject';
-import Techs from '../Techs/Techs';
-import AboutMe from '../AboutMe/AboutMe';
-import Portfolio from '../Portfolio/Portfolio';
-import Footer from '../Footer/Footer';
+import Header from "../Header/Header";
+import Promo from "../Promo/Promo";
+import AboutProject from "../AboutProject/AboutProject";
+import Techs from "../Techs/Techs";
+import AboutMe from "../AboutMe/AboutMe";
+import Portfolio from "../Portfolio/Portfolio";
+import Footer from "../Footer/Footer";
 
-function Main() {
+function Main(props) {
   return (
     <div className="page__container">
-      <Header headerColor={'dark-blue'} />
+      <Header headerColor={"dark-blue"} loggedIn={props.loggedIn} />
       <main className="main">
         <Promo />
         <AboutProject />
@@ -19,7 +19,7 @@ function Main() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }
 
 export default Main;
